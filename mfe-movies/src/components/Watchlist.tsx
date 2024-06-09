@@ -1,5 +1,7 @@
 import "./Watchlist.css";
 import { useWatchlistStore } from "../store/movie-store";
+import { Link } from "react-router-dom";
+
 
 const Watchlist = () => {
   const { watchlist, removeFromWatchlist, clearWatchlist } = useWatchlistStore(
@@ -14,6 +16,7 @@ const Watchlist = () => {
 
   return (
     <div className="watchlist">
+      <Link to="/About">About</Link>
       <h3>Watchlist</h3>
       {watchlist?.map((movie) => (
         <div key={movie.id} className="watchlist-item">

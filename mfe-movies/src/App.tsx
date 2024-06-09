@@ -1,17 +1,16 @@
-import "./App.css";
-import Watchlist from "./components/Watchlist";
-import Movies from "./components/Movies";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
+import About from "./components/About";
+import Content from "./components/Content";
 
 function App() {
-    return (
-        <div className="App">
-            <h2>Top rated movies</h2>
-            <div className="content">
-                <Movies />
-                <Watchlist />
-            </div>
-        </div>
-    );
+  return (
+    <MemoryRouter>
+      <Routes>
+        <Route path="/" element={<Content />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </MemoryRouter>
+  );
 }
 
 export default App;
