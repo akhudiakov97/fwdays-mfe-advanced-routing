@@ -33,7 +33,7 @@ const Watchlist = () => {
         </button>
       )}
 
-    <button  onClick={()=>{ onNavigateContext?.onNavigate('/watchlist')}}>
+    <button onClick={()=>{ onNavigateContext?.onNavigate('/watchlist')}}>
          Go to Watchlist Mfe
         </button>
     </div>
