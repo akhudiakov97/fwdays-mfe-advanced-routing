@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Watchlist = () => {
   const [watchlist, setWatchlist] = React.useState([]);
@@ -34,6 +35,7 @@ const Watchlist = () => {
 
   return (
     <div>
+      <Link to="/about">About</Link>
       <h1>Watchlist</h1>
       <ul>
         {watchlist.map((movie) => (
