@@ -1,13 +1,8 @@
 import "./Watchlist.css";
 import { useWatchlistStore } from "../store/movie-store";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { NavigationContext } from "../App";
+import { Link } from "@tanstack/react-router";
 
-
-const Watchlist = () => {
-  const onNavigateContext = useContext(NavigationContext);
-
+function Watchlist() {
   const { watchlist, removeFromWatchlist, clearWatchlist } = useWatchlistStore(
     (state) => ({
       watchlist: state.watchlist,
@@ -15,7 +10,6 @@ const Watchlist = () => {
       clearWatchlist: state.clearWatchlist,
     })
   );
-
 
   return (
     <div className="watchlist">
@@ -32,12 +26,8 @@ const Watchlist = () => {
           Clear Watchlist
         </button>
       )}
-
-    <button onClick={()=>{ onNavigateContext?.onNavigate('/watchlist')}}>
-         Go to Watchlist Mfe
-        </button>
     </div>
   );
-};
+}
 
 export default Watchlist;

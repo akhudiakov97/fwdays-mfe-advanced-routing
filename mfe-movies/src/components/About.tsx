@@ -1,8 +1,7 @@
-import React from "react";
+import { Link } from "@tanstack/react-router";
 import "./About.css";
-import { Link } from "react-router-dom";
 
-export const About = () => {
+export function About() {
   return (
     <div className="about-container">
       <Link to="/">Home</Link>
@@ -13,6 +12,6 @@ export const About = () => {
       </p>
     </div>
   );
-};
+}
 
 export default About;

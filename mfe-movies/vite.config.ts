@@ -13,7 +13,7 @@ export default defineConfig({
       name: "movies",
       filename: "moviesRemoteEntry.js",
       exposes: {
-        "./Movies": "./src/App.tsx",
+        "./Movies": "./src/main.tsx",
       },
       shared: ["react", "react-dom", "zustand", "axios"],
     }),

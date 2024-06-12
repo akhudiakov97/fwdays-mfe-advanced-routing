@@ -1,20 +1,19 @@
-import React, { useEffect } from "react";
-import {useWatchlistStore, useGetData} from "../store/movie-store";
+import { useEffect } from "react";
+import { useWatchlistStore, useGetData } from "../store/movie-store";
 import "./Movies.css";
 
 const Movies = () => {
-  const { addToWatchlist, removeFromWatchlist, isInWatchlist } = useWatchlistStore(
-    (state) => ({
+  const { addToWatchlist, removeFromWatchlist, isInWatchlist } =
+    useWatchlistStore((state) => ({
       addToWatchlist: state.addToWatchlist,
       removeFromWatchlist: state.removeFromWatchlist,
       isInWatchlist: state.isInWatchlist,
-    })
-  );
+    }));
   const getData = useGetData();
 
-    useEffect(() => {
-        getData.execute();
-    }, []);
+  useEffect(() => {
+    getData.execute();
+  }, []);
 
   return (
     <div className="movie-list">
@@ -22,7 +21,11 @@ const Movies = () => {
         <div key={movie.id} className="card style_1">
           <div className="image">
             <div className="wrapper">
-              <a className="image" href={`/movie/${movie.id}`} title={movie.title}>
+              <a
+                className="image"
+                href={`/movie/${movie.id}`}
+                title={movie.title}
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   className="movie-poster"
