@@ -13,7 +13,7 @@ export default defineConfig({
       name: "watchlist",
       filename: "watchlistRemoteEntry.js",
       exposes: {
-        "./Watchlist": "./src/App.tsx",
+        "./Watchlist": "./src/main.tsx",
       },
       shared: ["react", "react-dom"],
     }),

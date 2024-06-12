@@ -1,8 +1,10 @@
-import React from "react";
-import "./About.css";
-import { Link } from "react-router-dom";
+import { Link, createLazyFileRoute } from "@tanstack/react-router";
 
-export const About = () => {
+export const Route = createLazyFileRoute("/about")({
+  component: About,
+});
+
+function About() {
   return (
     <div className="about-container">
       <Link to="/">Home</Link>
@@ -13,6 +15,4 @@ export const About = () => {
       </p>
     </div>
   );
-};
-
-export default About;
+}
