@@ -13,7 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as LoginImport } from './routes/login'
+import { Route as LoginImport } from './components/login'
 import { Route as AuthenticatedImport } from './routes/_authenticated'
 
 // Create Virtual Routes
@@ -27,12 +27,12 @@ const IndexLazyImport = createFileRoute('/')()
 const WatchlistLazyRoute = WatchlistLazyImport.update({
   path: '/watchlist',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/watchlist.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./components/watchlist').then((d) => d.Route))
 
 const MoviesLazyRoute = MoviesLazyImport.update({
   path: '/movies',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/movies.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./components/movies').then((d) => d.Route))
 
 const LoginRoute = LoginImport.update({
   path: '/login',
@@ -47,7 +47,7 @@ const AuthenticatedRoute = AuthenticatedImport.update({
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./components').then((d) => d.Route))
 
 // Populate the FileRoutesByPath interface
 
