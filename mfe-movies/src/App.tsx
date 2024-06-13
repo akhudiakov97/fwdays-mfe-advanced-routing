@@ -16,7 +16,6 @@ const memoryHistory = createMemoryHistory({
   initialEntries: ["/"], // Pass your initial url
 });
 
-
 const rootRoute = createRootRoute({
   component: () => (
     <>
@@ -38,18 +37,19 @@ const aboutRoute = createRoute({
   component: About,
 });
 
+const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute])
+const router = createRouter({
+  routeTree,
+  history: memoryHistory,
+  defaultPreload: "intent",
+});
 
-const router = createRouter({ routeTree, history: memoryHistory  })
-
-
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface Register {
-    router: typeof router
+    router: typeof router;
   }
 }
-
 
 type Props = {
   onNavigate?: (to: string) => void;
