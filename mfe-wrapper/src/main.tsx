@@ -1,36 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Movies } from "./components/movies";
+import { createRoot } from "react-dom/client";
+import { App } from "./App";
 
-const router = createBrowserRouter([
-  {
-    path: "/movies",
-    element: <Movies />,
-  },
-  {
-    path: "/watchlist",
-    element: <div>About</div>,
-  },
-]);
-
-// Register the router instance for type safety
-declare module "@tanstack/react-router" {
-  interface Register {
-    router: typeof router;
-  }
-}
-
-// Render the app
-const rootElement = document.getElementById("root")!;
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement);
-  const authentication = useAuth();
-
-  root.render(
-    <StrictMode>
-      <RouterProvider router={router} context={{ authentication }} />
-    </StrictMode>
-  );
-}
+createRoot(document.getElementById("root")!).render(<App />);
