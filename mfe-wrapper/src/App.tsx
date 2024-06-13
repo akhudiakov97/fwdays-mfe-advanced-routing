@@ -81,11 +81,6 @@ export const App = () => {
   if (!session) {
     return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />;
   } else {
-    return (
-      <>
-        {/*  */}
-        <RouterProvider router={router} />
-      </>
-    );
+    return <RouterProvider router={router} />;
   }
 };
