@@ -42,7 +42,6 @@ const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
 const router = createRouter({
   routeTree,
   history: memoryHistory,
-  defaultPreload: "intent",
 });
 
 declare module "@tanstack/react-router" {
