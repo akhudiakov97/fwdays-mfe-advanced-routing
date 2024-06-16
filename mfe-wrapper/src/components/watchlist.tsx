@@ -7,8 +7,6 @@ export function Watchlist() {
   const navigate = useNavigate();
 
   return (
-    <div className="movies-container">
       <WatchlistLazy onNavigate={(to: string) => navigate(to)} />
-    </div>
   );
 }
